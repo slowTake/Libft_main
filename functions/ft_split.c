@@ -6,7 +6,7 @@
 /*   By: pnurmi <pnurmi@student.hive.fi>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/25 12:06:22 by pnurmi            #+#    #+#             */
-/*   Updated: 2025/04/26 13:26:21 by pnurmi           ###   ########.fr       */
+/*   Updated: 2025/04/26 16:00:59 by pnurmi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,3 +57,4 @@ static char	**str_malloc(const char *s, char c, char **array)
 		// if (array == NULL)
 	}
 }
+// substr

@@ -6,9 +6,11 @@
 /*   By: pnurmi <pnurmi@student.hive.fi>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/15 09:25:30 by pnurmi            #+#    #+#             */
-/*   Updated: 2025/04/17 11:31:30 by pnurmi           ###   ########.fr       */
+/*   Updated: 2025/04/26 16:01:01 by pnurmi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include "libft.h"
 
 int	ft_isalpha(int c)
 {
