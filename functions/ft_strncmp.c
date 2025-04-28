@@ -6,7 +6,7 @@
 /*   By: pnurmi <pnurmi@student.hive.fi>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/21 15:56:50 by pnurmi            #+#    #+#             */
-/*   Updated: 2025/04/22 09:47:28 by pnurmi           ###   ########.fr       */
+/*   Updated: 2025/04/28 15:34:05 by pnurmi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,14 +14,17 @@
 
 int	ft_strncmp(const char *s1, const char *s2, size_t n)
 {
-	while (s1[n] || s2[n])
+	size_t i;
+
+	i = 0;
+	while (i < n)
 	{
-		if (s1[n] == s2[n])
+		if (s1[i] == s2[i])
 		{
-			n++;
+			i++;
 		}
 		else
-			return (s1[n] - s2[n]);
+			return (s1[i] - s2[i]);
 	}
 	return (0);
 }
