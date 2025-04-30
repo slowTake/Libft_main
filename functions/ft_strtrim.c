@@ -6,7 +6,7 @@
 /*   By: pnurmi <pnurmi@student.hive.fi>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/29 13:59:13 by pnurmi            #+#    #+#             */
-/*   Updated: 2025/04/29 17:31:39 by pnurmi           ###   ########.fr       */
+/*   Updated: 2025/04/30 09:46:02 by pnurmi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,23 +20,17 @@ char	*ft_strtrim(const char *s1, const char *set)
 	size_t	k;
 
 	i = 0;
-	while (ft_strchr(set, s1[i]))
-	{
+	while (s1[i] && ft_strchr(set, s1[i]))
 		i++;
-	}
-	j = ft_strlen(s1) - 1;
-	while (ft_strchr(set, s1[j]))
-	{
+	j = ft_strlen(s1);
+	while (j > i && ft_strchr(set, s1[j]))
 		j--;
-	}
 	trimmed = (char *)malloc(j - i + 1);
 	if (!trimmed)
 		return (NULL);
 	k = 0;
 	while (i <= j)
-	{
 		trimmed[k++] = s1[i++];
-	}
 	return (trimmed);
 }
 int	main(void)
@@ -45,7 +39,7 @@ int	main(void)
 	char	*set;
 	char	*result;
 
-	s1 = "aabaabaa";
+	s1 = "aaaabaaaa";
 	set = "a";
 	result = ft_strtrim(s1, set);
 	printf("%s", result);
