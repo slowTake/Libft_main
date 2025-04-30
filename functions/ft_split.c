@@ -6,7 +6,7 @@
 /*   By: pnurmi <pnurmi@student.hive.fi>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/25 12:06:22 by pnurmi            #+#    #+#             */
-/*   Updated: 2025/04/30 18:06:35 by pnurmi           ###   ########.fr       */
+/*   Updated: 2025/04/30 18:21:44 by pnurmi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ char	**ft_split(const char *s, char c)
 		array = (char *)malloc((word + 1) * sizeof(char *));
 		if (array == NULL)
 			return (NULL);
-		array[count++] = ft_substr(s, c, );
+		array[count++] = ft_substr(s, c, word?);
 		// calcuate the length of each word
 		// loop over each pointer and fill
 	}
