@@ -6,7 +6,7 @@
 /*   By: pnurmi <pnurmi@student.hive.fi>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/16 14:46:19 by pnurmi            #+#    #+#             */
-/*   Updated: 2025/04/29 17:07:17 by pnurmi           ###   ########.fr       */
+/*   Updated: 2025/05/01 14:08:22 by pnurmi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,5 +33,7 @@ size_t	ft_strlcat(char *dst, const char *src, size_t dstsize);
 char	*ft_strrchr(const char *s, int c);
 char	*ft_strchr(const char *s, int c);
 char	*ft_strtrim(const char *s1, const char *set);
+char	*ft_substr(const char *s, unsigned int start, size_t len);
+char	**ft_split(const char *s, char c);
 
 #endif
