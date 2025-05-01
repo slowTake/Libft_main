@@ -6,14 +6,14 @@
 /*   By: pnurmi <pnurmi@student.hive.fi>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/25 12:06:22 by pnurmi            #+#    #+#             */
-/*   Updated: 2025/05/01 15:14:51 by pnurmi           ###   ########.fr       */
+/*   Updated: 2025/05/01 15:41:56 by pnurmi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
 static size_t	ft_count(const char *s, char c);
-static void		*ft_free(const char *s);
+static void		*ft_free(char **s);
 static size_t	ft_len(const char *s, char c);
 
 char	**ft_split(const char *s, char c)
@@ -26,12 +26,17 @@ char	**ft_split(const char *s, char c)
 	words = ft_count(s, c);
 	while (i < words)
 	{
-		array = (char **)malloc((words + 1) * sizeof(char *));
+		array = malloc((words + 1) * (sizeof(char *)));
 		if (array == NULL)
 			return (NULL);
 		while (array[i])
 		{
 			array[i] = ft_substr(s, c, ft_len(s, c));
+			if (!array)
+			{
+				ft_free(array);
+				return (NULL);
+			}
 			i++;
 		}
 	}
@@ -58,7 +63,7 @@ static size_t	ft_count(const char *s, char c)
 	return (word);
 }
 
-static void	*ft_free(const char *s)
+static void	*ft_free(char **s)
 {
 	size_t	i;
 

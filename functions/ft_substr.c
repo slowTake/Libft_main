@@ -6,7 +6,7 @@
 /*   By: pnurmi <pnurmi@student.hive.fi>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/26 14:03:32 by pnurmi            #+#    #+#             */
-/*   Updated: 2025/05/01 13:29:59 by pnurmi           ###   ########.fr       */
+/*   Updated: 2025/05/01 15:38:56 by pnurmi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ char	*ft_substr(const char *s, unsigned int start, size_t len)
 	{
 		substring[i++] = s[start++];
 	}
-	substring[i] == '\0';
+	substring[i] = '\0';
 	return (substring);
 }
 // start has to be withing the length of the given string (s)

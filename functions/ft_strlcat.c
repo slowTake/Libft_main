@@ -6,7 +6,7 @@
 /*   By: pnurmi <pnurmi@student.hive.fi>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/17 15:45:33 by pnurmi            #+#    #+#             */
-/*   Updated: 2025/04/22 16:28:35 by pnurmi           ###   ########.fr       */
+/*   Updated: 2025/05/01 19:44:36 by pnurmi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,19 +14,20 @@
 
 size_t	ft_strlcat(char *dst, const char *src, size_t dstsize)
 {
-	int	i;
-	int	j;
+	size_t	d_len;
+	size_t	s_len;
+	size_t	i;
 
-	while (dst[i] != '\0')
+	d_len = ft_strlen(dst);
+	s_len = ft_strlen(dst);
+	i = 0;
+	if (dstsize <= d_len)
+		return (dstsize + s_len);
+	while (src[i] != '\0' && d_len + i < dstsize - 1)
 	{
+		dst[d_len + i] = src[i];
 		i++;
 	}
-	while (src[j] != '\0')
-	{
-		dst[i] = src[j];
-		i++;
-		j++;
-	}
-	dst[i] = '\0';
-	return (dst);
+	dst[d_len + i] = '\0';
+	return (d_len + s_len);
 }

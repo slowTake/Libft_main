@@ -6,7 +6,7 @@
 /*   By: pnurmi <pnurmi@student.hive.fi>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/25 10:08:05 by pnurmi            #+#    #+#             */
-/*   Updated: 2025/04/25 12:01:48 by pnurmi           ###   ########.fr       */
+/*   Updated: 2025/05/01 15:39:23 by pnurmi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ char	*ft_strdup(const char *s1)
 	size_t	len;
 	size_t	i;
 
-	len = strlen(s1);
+	len = ft_strlen(s1);
 	i = 0;
 	s2 = (char *)malloc((len + 1) * sizeof(char));
 	while (i < len)
@@ -26,7 +26,7 @@ char	*ft_strdup(const char *s1)
 		s2[i] = s1[i];
 		i++;
 	}
-	s2[i] == '\0';
+	s2[i] = '\0';
 	return (s2);
 }
 

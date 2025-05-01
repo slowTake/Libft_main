@@ -6,7 +6,7 @@
 /*   By: pnurmi <pnurmi@student.hive.fi>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/24 13:46:11 by pnurmi            #+#    #+#             */
-/*   Updated: 2025/04/25 12:01:50 by pnurmi           ###   ########.fr       */
+/*   Updated: 2025/05/01 19:11:57 by pnurmi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,7 @@ void	*ft_calloc(size_t count, size_t size)
 	unsigned char	*tmp;
 	size_t			i;
 
+	i = 0;
 	tmp = malloc(count * size);
 	if (tmp[i] == '\0')
 	{
