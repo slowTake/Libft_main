@@ -6,7 +6,7 @@
 /*   By: pnurmi <pnurmi@student.hive.fi>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/25 12:06:22 by pnurmi            #+#    #+#             */
-/*   Updated: 2025/05/02 17:05:19 by pnurmi           ###   ########.fr       */
+/*   Updated: 2025/05/02 18:43:23 by pnurmi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,21 +24,21 @@ char	**ft_split(const char *s, char c)
 
 	i = 0;
 	words = ft_count(s, c);
-	while (i < words)
+	array = malloc((ft_count(s, c) + 1) * sizeof(char *));
+	if (!array)
+		return (NULL);
+	while (array[i])
 	{
-		array = malloc((words + 1) * (sizeof(char *)));
-		if (array == NULL)
-			return (NULL);
-		while (array[i])
+		if (array[i] != c)
 		{
 			array[i] = ft_substr(s, c, ft_len(s, c));
-			if (!array)
-			{
-				ft_free(array);
-				return (NULL);
-			}
+			if (!array[i])
+				return (ft_free(array));
 			i++;
+			i += ft_len(s, c);
 		}
+		else
+			i++;
 	}
 	array[i] = NULL;
 	return (array);
@@ -52,13 +52,13 @@ static size_t	ft_count(const char *s, char c)
 	word = 0;
 	while (s[i])
 	{
-		if (s[i] == c)
-		{
-			word++;
-			while (s[i] == c)
-				i++;
-		}
-		i++;
+		while (s[i] == c)
+			i++;
+		if (s[i] == '\0')
+			break ;
+		while (s[i] != c && s[i])
+			i++;
+		word++;
 	}
 	return (word);
 }
