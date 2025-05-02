@@ -6,7 +6,7 @@
 /*   By: pnurmi <pnurmi@student.hive.fi>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/16 14:12:38 by pnurmi            #+#    #+#             */
-/*   Updated: 2025/05/01 19:11:18 by pnurmi           ###   ########.fr       */
+/*   Updated: 2025/05/02 16:27:37 by pnurmi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,14 +24,12 @@ int	ft_atoi(const char *str)
 	sign = 1;
 	i = 0;
 	while (ft_space(str[i]))
-	{
 		i++;
-		if (str[i] == '+' || str[i] == '-')
-		{
-			if (str[i] == '-')
-				sign = -1;
-			i++;
-		}
+	if (str[i] == '+' || str[i] == '-')
+	{
+		if (str[i] == '-')
+			sign = -1;
+		i++;
 	}
 	while (ft_isdigit(str[i]))
 	{
@@ -43,8 +41,7 @@ int	ft_atoi(const char *str)
 }
 static int	ft_space(int c)
 {
-	if (c == ' ' || c == '\t' || c == '\n' || c == '\f' || c == '\f'
-		|| c == '\r')
+	if (c == 32 || (c <= 13 && c >= 7))
 		return (1);
 	return (0);
 }

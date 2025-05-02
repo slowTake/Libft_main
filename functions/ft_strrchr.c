@@ -6,7 +6,7 @@
 /*   By: pnurmi <pnurmi@student.hive.fi>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/21 13:48:34 by pnurmi            #+#    #+#             */
-/*   Updated: 2025/05/01 19:32:13 by pnurmi           ###   ########.fr       */
+/*   Updated: 2025/05/02 12:43:50 by pnurmi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,18 +16,22 @@ char	*ft_strrchr(const char *s, int c)
 {
 	size_t	i;
 	char	cast;
+	char	*result;
 
+	result = 0;
 	cast = (char)c;
-	i = ft_strlen(s);
-	while (i > 0)
+	i = 0;
+	if (!s)
+		return (NULL);
+	while (s[i] != '\0')
 	{
-		if (s[i - 1] == cast)
+		if (s[i] == (char)c)
 		{
-			return ((char *)&s[i - 1]);
+			result = ((char *)&s[i]);
 		}
-		i--;
+		i++;
 	}
-	if (i == 0 && s[i] == cast)
-		return ((char *)&s[i]);
-	return (NULL);
+	if (s[i] == (char)c)
+		result = ((char *)&s[i]);
+	return (result);
 }

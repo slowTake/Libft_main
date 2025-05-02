@@ -6,7 +6,7 @@
 /*   By: pnurmi <pnurmi@student.hive.fi>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/29 13:59:13 by pnurmi            #+#    #+#             */
-/*   Updated: 2025/05/01 13:29:45 by pnurmi           ###   ########.fr       */
+/*   Updated: 2025/05/02 16:27:34 by pnurmi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,14 +23,15 @@ char	*ft_strtrim(const char *s1, const char *set)
 	while (s1[i] && ft_strchr(set, s1[i]))
 		i++;
 	j = ft_strlen(s1);
-	while (j > i && ft_strchr(set, s1[j]))
+	while (j > i && ft_strchr(set, s1[j - 1]))
 		j--;
 	trimmed = (char *)malloc(j - i + 1);
 	if (!trimmed)
 		return (NULL);
 	k = 0;
-	while (i <= j)
+	while (i < j)
 		trimmed[k++] = s1[i++];
+	trimmed[k] = 0;
 	return (trimmed);
 }
 // returns a trimmed s1 or null if mem alloc failed
