@@ -6,9 +6,11 @@
 /*   By: pnurmi <pnurmi@student.hive.fi>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/15 14:44:52 by pnurmi            #+#    #+#             */
-/*   Updated: 2025/04/17 16:54:45 by pnurmi           ###   ########.fr       */
+/*   Updated: 2025/05/03 15:25:17 by pnurmi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include "libft.h"
 
 int	ft_isprint(int c)
 {

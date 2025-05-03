@@ -6,7 +6,7 @@
 /*   By: pnurmi <pnurmi@student.hive.fi>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/16 19:01:16 by pnurmi            #+#    #+#             */
-/*   Updated: 2025/05/01 15:44:32 by pnurmi           ###   ########.fr       */
+/*   Updated: 2025/05/03 17:13:14 by pnurmi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,13 +24,11 @@ void	*ft_memmove(void *dst, const void *src, size_t len)
 	if (len == 0)
 		return (dst);
 	if (tmp_dst < tmp_src)
-	{
 		while (i < len)
 		{
 			tmp_dst[i] = tmp_src[i];
 			i++;
 		}
-	}
 	else
 	{
 		while (len > 0)

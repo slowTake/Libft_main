@@ -6,7 +6,7 @@
 /*   By: pnurmi <pnurmi@student.hive.fi>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/25 10:08:05 by pnurmi            #+#    #+#             */
-/*   Updated: 2025/05/02 12:16:26 by pnurmi           ###   ########.fr       */
+/*   Updated: 2025/05/03 14:38:30 by pnurmi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,9 +31,3 @@ char	*ft_strdup(const char *s1)
 	s2[i] = '\0';
 	return (s2);
 }
-
-// use malloc for s1
-// copy s1 and measure space
-
-// loop over s1 copy each to new str
-// return dst and src str

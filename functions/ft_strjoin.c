@@ -6,7 +6,7 @@
 /*   By: pnurmi <pnurmi@student.hive.fi>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/29 12:43:24 by pnurmi            #+#    #+#             */
-/*   Updated: 2025/05/01 19:12:40 by pnurmi           ###   ########.fr       */
+/*   Updated: 2025/05/03 14:38:40 by pnurmi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,7 +39,3 @@ char	*ft_strjoin(const char *s1, const char *s2)
 	newstr[i] = '\0';
 	return (newstr);
 }
-// cats 2 strings into new string
-// requires memmory allocation
-// s1 and s2 prefix and suffix
-// returns new string or null if mem alloc fails

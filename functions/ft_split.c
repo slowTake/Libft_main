@@ -6,7 +6,7 @@
 /*   By: pnurmi <pnurmi@student.hive.fi>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/25 12:06:22 by pnurmi            #+#    #+#             */
-/*   Updated: 2025/05/02 18:54:10 by pnurmi           ###   ########.fr       */
+/*   Updated: 2025/05/03 14:30:58 by pnurmi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,26 +19,26 @@ static size_t	ft_len(const char *s, char c);
 char	**ft_split(const char *s, char c)
 {
 	size_t	i;
-	size_t	words;
+	size_t	j;
 	char	**array;
 
 	i = 0;
-	words = ft_count(s, c);
+	j = 0;
 	array = malloc((ft_count(s, c) + 1) * sizeof(char *));
 	if (!array)
 		return (NULL);
-	while (array[i])
+	while (s[j])
 	{
-		if (array[i] != c)
+		if (s[j] != c)
 		{
-			array[i] = ft_substr(s, c, ft_len(s, c));
+			array[i] = ft_substr(s, j, ft_len(&s[j], c));
 			if (!array[i])
 				return (ft_free(array));
+			j = j + ft_len(&s[j], c);
 			i++;
-			i += ft_len(s, c);
 		}
 		else
-			i++;
+			j++;
 	}
 	array[i] = NULL;
 	return (array);
@@ -84,7 +84,7 @@ static size_t	ft_len(const char *s, char c)
 
 	len = 0;
 	i = 0;
-	if (s[i] && s[i] != c)
+	while (s[i] && s[i] != c)
 	{
 		len++;
 		i++;
