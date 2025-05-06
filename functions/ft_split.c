@@ -6,7 +6,7 @@
 /*   By: pnurmi <pnurmi@student.hive.fi>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/25 12:06:22 by pnurmi            #+#    #+#             */
-/*   Updated: 2025/05/03 14:30:58 by pnurmi           ###   ########.fr       */
+/*   Updated: 2025/05/04 14:32:57 by pnurmi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,6 +43,7 @@ char	**ft_split(const char *s, char c)
 	array[i] = NULL;
 	return (array);
 }
+
 static size_t	ft_count(const char *s, char c)
 {
 	size_t	word;

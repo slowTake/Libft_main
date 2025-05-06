@@ -6,7 +6,7 @@
 /*   By: pnurmi <pnurmi@student.hive.fi>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/29 13:59:13 by pnurmi            #+#    #+#             */
-/*   Updated: 2025/05/02 16:27:34 by pnurmi           ###   ########.fr       */
+/*   Updated: 2025/05/04 14:05:48 by pnurmi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,8 +34,3 @@ char	*ft_strtrim(const char *s1, const char *set)
 	trimmed[k] = 0;
 	return (trimmed);
 }
-// returns a trimmed s1 or null if mem alloc failed
-// removes set from s1
-// strchr(set) strchr locates character in string
-// find 1st !match of set and from the back
-// make sure i and j dont cross while ! i > j

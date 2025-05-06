@@ -6,7 +6,7 @@
 /*   By: pnurmi <pnurmi@student.hive.fi>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/26 14:03:32 by pnurmi            #+#    #+#             */
-/*   Updated: 2025/05/02 12:21:13 by pnurmi           ###   ########.fr       */
+/*   Updated: 2025/05/04 14:06:00 by pnurmi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,3 @@ char	*ft_substr(const char *s, unsigned int start, size_t len)
 	substring[i] = '\0';
 	return (substring);
 }
-// start has to be withing the length of the given string (s)
-// start + len < full length
-// if start is bigger than len then return (strdup(""))
-// returns blank string if start is longer than *s

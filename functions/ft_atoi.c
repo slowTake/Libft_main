@@ -6,7 +6,7 @@
 /*   By: pnurmi <pnurmi@student.hive.fi>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/16 14:12:38 by pnurmi            #+#    #+#             */
-/*   Updated: 2025/05/02 16:27:37 by pnurmi           ###   ########.fr       */
+/*   Updated: 2025/05/04 14:27:35 by pnurmi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,6 +39,7 @@ int	ft_atoi(const char *str)
 	result *= sign;
 	return (result);
 }
+
 static int	ft_space(int c)
 {
 	if (c == 32 || (c <= 13 && c >= 7))

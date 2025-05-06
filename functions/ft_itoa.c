@@ -6,7 +6,7 @@
 /*   By: pnurmi <pnurmi@student.hive.fi>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/03 14:31:23 by pnurmi            #+#    #+#             */
-/*   Updated: 2025/05/03 18:33:37 by pnurmi           ###   ########.fr       */
+/*   Updated: 2025/05/04 14:33:35 by pnurmi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,6 +42,7 @@ char	*ft_itoa(int n)
 	result[ft_digit(n)] = '\0';
 	return (result);
 }
+
 static int	ft_digit(int n)
 {
 	int	potato;
@@ -58,6 +59,7 @@ static int	ft_digit(int n)
 	}
 	return (potato);
 }
+
 static void	ft_calc(char *str, long *num, int index)
 {
 	str[index] = ((*num % 10) + 48);

@@ -6,7 +6,7 @@
 /*   By: pnurmi <pnurmi@student.hive.fi>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/03 14:41:59 by pnurmi            #+#    #+#             */
-/*   Updated: 2025/05/03 17:14:18 by pnurmi           ###   ########.fr       */
+/*   Updated: 2025/05/04 14:33:52 by pnurmi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,8 @@
 
 char	*ft_strmapi(const char *s, char (*f)(unsigned int, char))
 {
-	unsigned int i;
-	char *result;
+	unsigned int	i;
+	char			*result;
 
 	i = 0;
 	result = malloc((ft_strlen(s) + 1) * sizeof(char));
