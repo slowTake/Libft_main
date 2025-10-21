@@ -1,102 +1,85 @@
-NAME		= libft.a
+# ==================================
+# 1. Compiler and Flags
+# ==================================
+CC      := cc
+CFLAGS  := -Wall -Wextra -Werror -I.
+AR      := ar
+ARFLAGS := rcs
 
-# Source directories
-CHAR_DIR	= src/character
-STR_DIR		= src/string
-MEM_DIR		= src/memory
-NUM_DIR		= src/numeric
-IO_DIR		= src/io
-PRINTF_DIR	= src/printf
-GNL_DIR		= src/gnl
+# Colors
+GREEN   := \033[0;32m
+CYAN    := \033[0;36m
+YELLOW  := \033[1;33m
+RESET   := \033[0m
 
-SRCS		= $(CHAR_DIR)/ft_isalpha.c \
-			  $(CHAR_DIR)/ft_isdigit.c \
-			  $(CHAR_DIR)/ft_isalnum.c \
-			  $(CHAR_DIR)/ft_isascii.c \
-			  $(CHAR_DIR)/ft_isprint.c \
-			  $(CHAR_DIR)/ft_toupper.c \
-			  $(CHAR_DIR)/ft_tolower.c \
-			  $(STR_DIR)/ft_strlen.c \
-			  $(STR_DIR)/ft_strlcpy.c \
-			  $(STR_DIR)/ft_strlcat.c \
-			  $(STR_DIR)/ft_strchr.c \
-			  $(STR_DIR)/ft_strrchr.c \
-			  $(STR_DIR)/ft_strncmp.c \
-			  $(STR_DIR)/ft_strnstr.c \
-			  $(STR_DIR)/ft_strdup.c \
-			  $(STR_DIR)/ft_substr.c \
-			  $(STR_DIR)/ft_strjoin.c \
-			  $(STR_DIR)/ft_strtrim.c \
-			  $(STR_DIR)/ft_split.c \
-			  $(STR_DIR)/ft_strmapi.c \
-			  $(STR_DIR)/ft_striteri.c \
-			  $(MEM_DIR)/ft_memset.c \
-			  $(MEM_DIR)/ft_bzero.c \
-			  $(MEM_DIR)/ft_memcpy.c \
-			  $(MEM_DIR)/ft_memmove.c \
-			  $(MEM_DIR)/ft_memchr.c \
-			  $(MEM_DIR)/ft_memcmp.c \
-			  $(MEM_DIR)/ft_calloc.c \
-			  $(NUM_DIR)/ft_atoi.c \
-			  $(NUM_DIR)/ft_itoa.c \
-			  $(IO_DIR)/ft_putchar_fd.c \
-			  $(IO_DIR)/ft_putstr_fd.c \
-			  $(IO_DIR)/ft_putendl_fd.c \
-			  $(IO_DIR)/ft_putnbr_fd.c \
-			  $(PRINTF_DIR)/ft_printf.c \
-			  $(PRINTF_DIR)/ft_printf_utility.c \
-			  $(GNL_DIR)/ft_gnl.c \
-			  $(GNL_DIR)/ft_gnl_util.c
+# ==================================
+# 2. Files and Output
+# ==================================
+NAME    := libft.a
 
-# Object files directory
-OBJ_DIR		= objs
+SRCS    := src/character/ft_isalpha.c \
+           src/character/ft_isdigit.c \
+           src/character/ft_isalnum.c \
+           src/character/ft_isascii.c \
+           src/character/ft_isprint.c \
+           src/character/ft_toupper.c \
+           src/character/ft_tolower.c \
+           src/string/ft_strlen.c \
+           src/string/ft_strlcpy.c \
+           src/string/ft_strlcat.c \
+           src/string/ft_strchr.c \
+           src/string/ft_strrchr.c \
+           src/string/ft_strncmp.c \
+           src/string/ft_strnstr.c \
+           src/string/ft_strdup.c \
+           src/string/ft_substr.c \
+           src/string/ft_strjoin.c \
+           src/string/ft_strtrim.c \
+           src/string/ft_split.c \
+           src/string/ft_strmapi.c \
+           src/string/ft_striteri.c \
+           src/memory/ft_memset.c \
+           src/memory/ft_bzero.c \
+           src/memory/ft_memcpy.c \
+           src/memory/ft_memmove.c \
+           src/memory/ft_memchr.c \
+           src/memory/ft_memcmp.c \
+           src/memory/ft_calloc.c \
+           src/numeric/ft_atoi.c \
+           src/numeric/ft_itoa.c \
+           src/io/ft_putchar_fd.c \
+           src/io/ft_putstr_fd.c \
+           src/io/ft_putendl_fd.c \
+           src/io/ft_putnbr_fd.c \
+           src/printf/ft_printf.c \
+           src/printf/ft_printf_utility.c \
+           src/gnl/ft_gnl.c \
+           src/gnl/ft_gnl_util.c
 
-# Object files - all go to objs/ folder
-OBJS		= $(addprefix $(OBJ_DIR)/, $(notdir $(SRCS:.c=.o)))
+OBJS    := $(SRCS:.c=.o)
 
-# Compiler and Flags
-CC			= cc
-CFLAGS		= -Wall -Wextra -Werror -I.
+# ==================================
+# 3. Rules
+# ==================================
 
-# Archive command
-AR			= ar -rcs
-
-# Remove command
-RM			= rm -f
-
-# -------------------- Main Targets --------------------
+.PHONY: all clean fclean re
 
 all: $(NAME)
 
 $(NAME): $(OBJS)
-	$(AR) $(NAME) $(OBJS)
+	@$(AR) $(ARFLAGS) $@ $^
+	@echo "$(CYAN)📚 Built: $@$(RESET)"
 
-# Create objs directory
-$(OBJ_DIR):
-	mkdir -p $(OBJ_DIR)
-
-# vpath tells make where to look for source files
-vpath %.c $(CHAR_DIR)
-vpath %.c $(STR_DIR)
-vpath %.c $(MEM_DIR)
-vpath %.c $(NUM_DIR)
-vpath %.c $(IO_DIR)
-vpath %.c $(PRINTF_DIR)
-vpath %.c $(GNL_DIR)
-
-# Compilation rule
-$(OBJ_DIR)/%.o: %.c | $(OBJ_DIR)
-	$(CC) $(CFLAGS) -c $< -o $@
-
-# -------------------- Phony Targets --------------------
-
-.PHONY: all clean fclean re
+%.o: %.c
+	@$(CC) $(CFLAGS) -c $< -o $@
+	@echo "$(GREEN)🛠️  Compiled:$(RESET) $<"
 
 clean:
-	$(RM) $(OBJS)
+	@rm -f $(OBJS)
+	@echo "$(YELLOW)🧹 Cleaned object files$(RESET)"
 
 fclean: clean
-	$(RM) $(NAME)
-	$(RM) -r $(OBJ_DIR)
+	@rm -f $(NAME)
+	@echo "$(YELLOW)🧨 Removed $(NAME)$(RESET)"
 
 re: fclean all
