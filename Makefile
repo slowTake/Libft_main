@@ -35,6 +35,7 @@ SRCS    := src/character/ft_isalpha.c \
            src/string/ft_substr.c \
            src/string/ft_strjoin.c \
            src/string/ft_strtrim.c \
+           src/string/ft_strtol.c \
            src/string/ft_split.c \
            src/string/ft_strmapi.c \
            src/string/ft_striteri.c \
